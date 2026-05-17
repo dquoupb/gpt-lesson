@@ -1,9 +1,9 @@
-package gpt.lesson.chatgptlesson.createbean.config;
+package gpt.lesson.chatgptlesson.day3.createbean.config;
 
-import gpt.lesson.chatgptlesson.createbean.client.MinioStorageClient;
-import gpt.lesson.chatgptlesson.createbean.client.ObjectStorageClient;
-import gpt.lesson.chatgptlesson.createbean.client.S3StorageClient;
-import gpt.lesson.chatgptlesson.createbean.registry.ObjectStorageRegistry;
+import gpt.lesson.chatgptlesson.day3.createbean.client.MinioStorageClient;
+import gpt.lesson.chatgptlesson.day3.createbean.client.ObjectStorageClient;
+import gpt.lesson.chatgptlesson.day3.createbean.client.S3StorageClient;
+import gpt.lesson.chatgptlesson.day3.createbean.registry.ObjectStorageRegistry;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

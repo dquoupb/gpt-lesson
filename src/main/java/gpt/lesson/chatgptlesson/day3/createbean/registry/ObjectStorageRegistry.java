@@ -1,7 +1,7 @@
-package gpt.lesson.chatgptlesson.createbean.registry;
+package gpt.lesson.chatgptlesson.day3.createbean.registry;
 
-import gpt.lesson.chatgptlesson.createbean.client.ObjectStorageClient;
-import gpt.lesson.chatgptlesson.createbean.client.ObjectStorageType;
+import gpt.lesson.chatgptlesson.day3.createbean.client.ObjectStorageClient;
+import gpt.lesson.chatgptlesson.day3.createbean.client.ObjectStorageType;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;

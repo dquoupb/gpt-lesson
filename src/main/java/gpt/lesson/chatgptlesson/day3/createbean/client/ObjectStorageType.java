@@ -1,4 +1,4 @@
-package gpt.lesson.chatgptlesson.createbean.client;
+package gpt.lesson.chatgptlesson.day3.createbean.client;
 
 public enum ObjectStorageType {
     S3,

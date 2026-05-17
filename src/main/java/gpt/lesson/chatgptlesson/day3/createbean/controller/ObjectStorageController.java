@@ -1,7 +1,7 @@
-package gpt.lesson.chatgptlesson.createbean.controller;
+package gpt.lesson.chatgptlesson.day3.createbean.controller;
 
-import gpt.lesson.chatgptlesson.createbean.client.ObjectStorageType;
-import gpt.lesson.chatgptlesson.createbean.service.ObjectStorageService;
+import gpt.lesson.chatgptlesson.day3.createbean.client.ObjectStorageType;
+import gpt.lesson.chatgptlesson.day3.createbean.service.ObjectStorageService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

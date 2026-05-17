@@ -1,4 +1,4 @@
-package gpt.lesson.chatgptlesson.createbean.client;
+package gpt.lesson.chatgptlesson.day3.createbean.client;
 
 import lombok.extern.slf4j.Slf4j;
 

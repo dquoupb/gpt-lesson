@@ -1,8 +1,8 @@
-package gpt.lesson.chatgptlesson.createbean.service;
+package gpt.lesson.chatgptlesson.day3.createbean.service;
 
-import gpt.lesson.chatgptlesson.createbean.client.ObjectStorageClient;
-import gpt.lesson.chatgptlesson.createbean.client.ObjectStorageType;
-import gpt.lesson.chatgptlesson.createbean.registry.ObjectStorageRegistry;
+import gpt.lesson.chatgptlesson.day3.createbean.client.ObjectStorageClient;
+import gpt.lesson.chatgptlesson.day3.createbean.client.ObjectStorageType;
+import gpt.lesson.chatgptlesson.day3.createbean.registry.ObjectStorageRegistry;
 import org.springframework.stereotype.Service;
 
 @Service

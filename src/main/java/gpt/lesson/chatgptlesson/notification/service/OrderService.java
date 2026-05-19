@@ -1,8 +1,8 @@
 package gpt.lesson.chatgptlesson.notification.service;
 
 
-import gpt.lesson.chatgptlesson.notification.NotificationChannel;
-import gpt.lesson.chatgptlesson.notification.NotificationMessage;
+import gpt.lesson.chatgptlesson.notification.domain.NotificationChannel;
+import gpt.lesson.chatgptlesson.notification.domain.NotificationMessage;
 import gpt.lesson.chatgptlesson.notification.sender.NotificationClient;
 import org.springframework.stereotype.Service;
 

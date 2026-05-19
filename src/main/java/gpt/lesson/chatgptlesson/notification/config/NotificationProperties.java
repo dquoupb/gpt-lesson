@@ -1,9 +1,6 @@
 package gpt.lesson.chatgptlesson.notification.config;
 
-import gpt.lesson.chatgptlesson.notification.NotificationChannel;
-import gpt.lesson.chatgptlesson.notification.sender.target.Console;
-import gpt.lesson.chatgptlesson.notification.sender.target.Email;
-import gpt.lesson.chatgptlesson.notification.sender.target.Slack;
+import gpt.lesson.chatgptlesson.notification.domain.NotificationChannel;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 

@@ -1,7 +1,7 @@
 package gpt.lesson.chatgptlesson.notification.sender;
 
-import gpt.lesson.chatgptlesson.notification.NotificationChannel;
-import gpt.lesson.chatgptlesson.notification.NotificationMessage;
+import gpt.lesson.chatgptlesson.notification.domain.NotificationChannel;
+import gpt.lesson.chatgptlesson.notification.domain.NotificationMessage;
 
 import java.util.EnumMap;
 import java.util.List;

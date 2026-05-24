@@ -3,7 +3,6 @@ package gpt.lesson.chatgptlesson.notification.config;
 import gpt.lesson.chatgptlesson.notification.domain.NotificationChannel;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-
 @ConfigurationProperties(prefix = "notification")
 public class NotificationProperties {
     private boolean enabled = false;

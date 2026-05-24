@@ -6,6 +6,9 @@ import gpt.lesson.chatgptlesson.notification.domain.NotificationMessage;
 import gpt.lesson.chatgptlesson.notification.sender.NotificationClient;
 import org.springframework.stereotype.Service;
 
+/**
+ * 이 샘플을 실제로 수행하는 곳
+ */
 @Service
 public class OrderService {
 

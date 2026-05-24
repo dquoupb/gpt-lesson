@@ -6,6 +6,9 @@ import gpt.lesson.chatgptlesson.notification.sender.NotificationClient;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+/**
+ * 이 샘플을 실제로 수행하는 곳
+ */
 @Component
 public class NotificationTestRunner implements CommandLineRunner {
     private final NotificationClient notificationClient;

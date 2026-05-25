@@ -2,8 +2,8 @@ spring:
   application:
   name: chatGPT-lesson
 notification:
-  default-channel: email
-
+#  default-channel: email
+#
   email:
     enabled: true
     host: smtp.example.com
@@ -11,6 +11,6 @@ notification:
     from: noreply@example.com
   console:
     enabled: true
-  slack:
-    enabled: true
-    webhook-url: slack-url.com
+#  slack:
+#    enabled: true
+#    webhook-url: slack-url.com

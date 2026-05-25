@@ -2,7 +2,6 @@ spring:
   application:
   name: chatGPT-lesson
 notification:
-  enabled: true
   default-channel: email
 
   email:
@@ -10,16 +9,8 @@ notification:
     host: smtp.example.com
     port: 587
     from: noreply@example.com
-#  slack:
-#    enabled: true
-#    webhookUrl: slack-url.com
-
-## 위와 같이 하면 등록되는 빈은
-##    ConsoleNotificationSender
-##    EmailNotificationSender
-##    NotificationClient
-##    NotificationProperties
-
-## console 끄고싶으면 아래 조건 추가
-#  console:
-#    enabled: false
+  console:
+    enabled: true
+  slack:
+    enabled: true
+    webhook-url: slack-url.com

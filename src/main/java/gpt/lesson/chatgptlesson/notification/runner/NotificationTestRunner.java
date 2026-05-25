@@ -17,35 +17,25 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class NotificationTestRunner implements CommandLineRunner {
-    private final ObjectProvider<NotificationClient> notificationClientProvider;
-//    private final NotificationClient notificationClient;
+    private final NotificationClient notificationClient;
 
-    public NotificationTestRunner(ObjectProvider<NotificationClient> notificationClientProvider) {
-        this.notificationClientProvider = notificationClientProvider;
+    public NotificationTestRunner(NotificationClient notificationClient) {
+        this.notificationClient = notificationClient;
     }
 
     @Override
     public void run(String... args) throws Exception {
-        NotificationClient notificationClient = notificationClientProvider.getIfAvailable();
-
         if(notificationClient == null) {
             System.out.println("Notification client not found");
             return;
         }
 
-        notificationClient.send(new NotificationMessage(
-                NotificationChannel.SLACK,
-                "slack 테스트 알림",
-                "안녕하세요. Slack 알림 테스트입니다.",
+        NotificationMessage message = new NotificationMessage(
+                NotificationChannel.CONSOLE,
+                "테스트 알림",
+                "AutoConfiguration으로 등록된 NotificationClient 테스트입니다.",
                 "tester"
-                )
         );
-//        NotificationMessage message = new NotificationMessage(
-//                NotificationChannel.CONSOLE,
-//                "테스트 알림",
-//                "AutoConfiguration으로 등록된 NotificationClient 테스트입니다.",
-//                "tester"
-//        );
-//        notificationClient.send(message);
+        notificationClient.send(message);
     }
 }

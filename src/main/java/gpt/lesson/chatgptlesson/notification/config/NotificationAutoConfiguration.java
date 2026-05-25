@@ -2,6 +2,7 @@ package gpt.lesson.chatgptlesson.notification.config;
 
 import gpt.lesson.chatgptlesson.notification.sender.*;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -13,11 +14,11 @@ import java.util.List;
 @AutoConfiguration
 @ConditionalOnClass(NotificationSender.class)
 @EnableConfigurationProperties(NotificationProperties.class)
-@ConditionalOnProperty( // notification.enabled: true 여야 자동설정이 동작한다.
-        prefix = "notification",
-        name = "enabled",
-        havingValue = "true"
-)
+//@ConditionalOnProperty( // notification.enabled: true 여야 자동설정이 동작한다. 근데 지금 다 주석했으니 무조건 자동설정.
+//        prefix = "notification",
+//        name = "enabled",
+//        havingValue = "true"
+//)
 public class NotificationAutoConfiguration {
 
     @Bean
@@ -26,7 +27,7 @@ public class NotificationAutoConfiguration {
             prefix = "notification.console",
             name = "enabled",
             havingValue = "true",
-            matchIfMissing = true
+            matchIfMissing = false // = 설정값이 없으면 조건 불만족으로 처리한다. 라는 의미
     )
     public NotificationSender consoleNotificationSender() {
         return new ConsoleNotificationSender();
@@ -36,8 +37,8 @@ public class NotificationAutoConfiguration {
     @ConditionalOnMissingBean(name="emailNotificationSender")
     @ConditionalOnProperty( // notification.email.enabled: true 여야 등록된다.
             prefix = "notification.email",
-            name = "enabled",
-            matchIfMissing = true
+            name = "host",
+            matchIfMissing = false
     )
     public NotificationSender emailNotificationSender(NotificationProperties properties) {
         NotificationProperties.Email email = properties.getEmail();
@@ -53,8 +54,8 @@ public class NotificationAutoConfiguration {
     @ConditionalOnMissingBean(name="slackNotificationSender")
     @ConditionalOnProperty( // notification.slack.enabled: true 여야 등록된다.
             prefix = "notification.slack",
-            name = "enabled",
-            havingValue = "true"
+            name = "webhook-url",
+            matchIfMissing = false
     )
     public NotificationSender slackNotificationSender(NotificationProperties properties) {
         NotificationProperties.Slack slack = properties.getSlack();
@@ -62,9 +63,10 @@ public class NotificationAutoConfiguration {
         return new SlackNotificationSender(slack.getWebhookUrl());
     }
 
-//    @Bean
-//    @ConditionalOnMissingBean
-//    public NotificationClient notificationClient(List<NotificationSender> senders, NotificationProperties properties) {
-//        return new NotificationClient(senders, properties.getDefaultChannel());
-//    }
+    @Bean
+    @ConditionalOnMissingBean(NotificationClient.class)
+    @ConditionalOnBean(NotificationSender.class)
+    public NotificationClient notificationClient(List<NotificationSender> senders, NotificationProperties properties) {
+        return new NotificationClient(senders, properties.getDefaultChannel());
+    }
 }

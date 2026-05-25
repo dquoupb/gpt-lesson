@@ -62,9 +62,9 @@ public class NotificationAutoConfiguration {
         return new SlackNotificationSender(slack.getWebhookUrl());
     }
 
-    @Bean
-    @ConditionalOnMissingBean
-    public NotificationClient notificationClient(List<NotificationSender> senders, NotificationProperties properties) {
-        return new NotificationClient(senders, properties.getDefaultChannel());
-    }
+//    @Bean
+//    @ConditionalOnMissingBean
+//    public NotificationClient notificationClient(List<NotificationSender> senders, NotificationProperties properties) {
+//        return new NotificationClient(senders, properties.getDefaultChannel());
+//    }
 }

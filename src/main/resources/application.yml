@@ -10,6 +10,10 @@ notification:
     host: smtp.example.com
     port: 587
     from: noreply@example.com
+#  slack:
+#    enabled: true
+#    webhookUrl: slack-url.com
+
 ## 위와 같이 하면 등록되는 빈은
 ##    ConsoleNotificationSender
 ##    EmailNotificationSender
